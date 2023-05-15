@@ -11,8 +11,8 @@ const Chat = () => {
 
   let msgStyle = "messages";
   if (auth.currentUser) {
-    const user = auth.currentUser;
-    const otherUser = message.id;
+    const user = auth.currentUser.uid;
+    const otherUser = message.uid;
     msgStyle = user === otherUser ? "my-messages" : "messages";
   }
 
