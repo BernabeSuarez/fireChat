@@ -37,7 +37,7 @@ const Chat = () => {
       {message.map((item) => (
         <div key={item.id} className={msgStyle}>
           <p>{item.content.text}</p>
-          <img src={auth.currentUser.photoURL} alt="profile" width={55} />
+          <img src={item.photoURL} alt="profile" width={55} />
         </div>
       ))}
 
