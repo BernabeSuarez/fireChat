@@ -12,8 +12,8 @@ export default function SendMessages() {
       addDoc(collection(db, "messages"), {
         text: msg,
         name: displayName,
+        image: photoURL,
         uid,
-        photoURL,
         fecha: serverTimestamp(),
       });
     } catch (e) {
