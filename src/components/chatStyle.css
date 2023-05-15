@@ -5,6 +5,11 @@
   margin-bottom: 2%;
   left: 100%;
   border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.my-messages img {
+  border-radius: 50%;
 }
 
 .messages {
@@ -13,4 +18,9 @@
   padding: 1%;
   margin-bottom: 2%;
   border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.messages img {
+  border-radius: 50%;
 }

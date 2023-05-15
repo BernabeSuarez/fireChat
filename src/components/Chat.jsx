@@ -9,10 +9,10 @@ import "./chatStyle.css";
 const Chat = () => {
   const [message, setMessage] = useState([]);
 
-  let msgStyle = "messages";
+  let msgStyle;
   if (auth.currentUser) {
     const user = auth.currentUser.uid;
-    const otherUser = message.uid;
+    const otherUser = message.id;
     msgStyle = user === otherUser ? "my-messages" : "messages";
   }
 
@@ -37,6 +37,7 @@ const Chat = () => {
       {message.map((item) => (
         <div key={item.id} className={msgStyle}>
           <p>{item.content.text}</p>
+          <img src={auth.currentUser.photoURL} alt="profile" width={55} />
         </div>
       ))}
 
