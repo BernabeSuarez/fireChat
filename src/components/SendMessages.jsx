@@ -13,7 +13,7 @@ export default function SendMessages() {
         text: msg,
         name: displayName,
         uid,
-        photo: photoURL,
+        photoURL,
         fecha: serverTimestamp(),
       });
     } catch (e) {
