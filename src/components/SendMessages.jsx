@@ -7,13 +7,13 @@ export default function SendMessages() {
 
   function sendMessage(e) {
     e.preventDefault();
-    const { uid, displayName, photoUrl } = auth.currentUser;
+    const { uid, displayName, photoURL } = auth.currentUser;
     try {
       addDoc(collection(db, "messages"), {
         text: msg,
         name: displayName,
         uid,
-        photoUrl: photoUrl,
+        photoUrl: photoURL,
         fecha: serverTimestamp(),
       });
     } catch (e) {
