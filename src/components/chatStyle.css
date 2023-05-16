@@ -1,26 +1,46 @@
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatContainer {
+  width: 100%;
+  max-height: 70vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
 .my-messages {
+  width: 50%;
+  margin-left: auto;
   background-color: aliceblue;
   color: black;
   padding: 1%;
   margin-bottom: 2%;
-  left: 100%;
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
-.my-messages img {
+.chatContainer img {
   border-radius: 50%;
+}
+.chatContainer p {
+  margin: 0px 15px;
 }
 
 .messages {
+  width: 50%;
+  margin-right: auto;
   background-color: rgb(118, 119, 119);
   color: white;
   padding: 1%;
   margin-bottom: 2%;
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
-}
-.messages img {
-  border-radius: 50%;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }

@@ -22,23 +22,23 @@ const Chat = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h3>Chat App</h3>
-
-      {message.map((item) => (
-        <div
-          key={item.id}
-          className={
-            item.content.uid === auth.currentUser.uid
-              ? "my-messages"
-              : "messages"
-          }
-        >
-          <p>{item.content.text}</p>
-          <img src={item.content.image} alt="profile" width={55} />
-        </div>
-      ))}
-
+      <div className="chatContainer">
+        {message.map((item) => (
+          <div
+            key={item.id}
+            className={
+              item.content.uid === auth.currentUser.uid
+                ? "my-messages"
+                : "messages"
+            }
+          >
+            <p>{item.content.text}</p>
+            <img src={item.content.image} alt="profile" width={55} />
+          </div>
+        ))}
+      </div>
       <SendMessages />
       <SignOut />
     </div>

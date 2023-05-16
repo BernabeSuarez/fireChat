@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/firebaseConfig";
+import "./SendMessages.css";
 
 export default function SendMessages() {
   const [msg, setMsg] = useState("");
@@ -23,14 +24,16 @@ export default function SendMessages() {
   }
 
   return (
-    <form onSubmit={sendMessage}>
-      <input
-        type="text"
-        placeholder="Escribe tu mensaje"
-        value={msg}
-        onChange={(e) => setMsg(e.target.value)}
-      />
-      <button type="submit">Enviar</button>
-    </form>
+    <div className="formContainer">
+      <form onSubmit={sendMessage}>
+        <input
+          type="text"
+          placeholder="Escribe tu mensaje"
+          value={msg}
+          onChange={(e) => setMsg(e.target.value)}
+        />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ function App() {
   const [user] = useAuthState(auth);
   console.log(user);
 
-  return <>{user ? <Chat /> : <SignIn />}</>;
+  return <div className="appContainer">{user ? <Chat /> : <SignIn />}</div>;
 }
 
 export default App;

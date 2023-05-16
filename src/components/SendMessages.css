@@ -1,0 +1,14 @@
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.formContainer form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.formContainer input {
+  width: 100%;
+}
