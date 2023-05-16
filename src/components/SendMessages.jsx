@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/firebaseConfig";
-import "./SendMessages.css";
+import { Button } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 
 export default function SendMessages() {
   const [msg, setMsg] = useState("");
@@ -26,13 +27,23 @@ export default function SendMessages() {
   return (
     <div className="formContainer">
       <form onSubmit={sendMessage}>
-        <input
+        <Input
           type="text"
           placeholder="Escribe tu mensaje"
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
+          size="md"
+          variant="flushed"
         />
-        <button type="submit">Enviar</button>
+        <Button
+          colorScheme="teal"
+          variant="outline"
+          width="100%"
+          marginTop="2%"
+          type="submit"
+        >
+          Enviar
+        </Button>
       </form>
     </div>
   );

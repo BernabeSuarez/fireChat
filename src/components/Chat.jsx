@@ -5,6 +5,8 @@ import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import SendMessages from "./SendMessages";
 import { auth } from "../firebase/firebaseConfig";
 import "./chatStyle.css";
+import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const Chat = () => {
   const [message, setMessage] = useState([]);
@@ -22,11 +24,14 @@ const Chat = () => {
   }, []);
 
   return (
-    <div className="container">
+    <Container maxW="md" color="white">
       <h3>Chat App</h3>
+
       <div className="chatContainer">
         {message.map((item) => (
-          <div
+          <Box
+            bg="aliceblue"
+            scrollBehavior="inside"
             key={item.id}
             className={
               item.content.uid === auth.currentUser.uid
@@ -35,13 +40,13 @@ const Chat = () => {
             }
           >
             <p>{item.content.text}</p>
-            <img src={item.content.image} alt="profile" width={55} />
-          </div>
+            <img src={item.content.image} alt="profile" width={35} />
+          </Box>
         ))}
       </div>
       <SendMessages />
       <SignOut />
-    </div>
+    </Container>
   );
 };
 
