@@ -24,7 +24,7 @@ const Chat = () => {
   }, []);
 
   return (
-    <Container maxW="md" color="white">
+    <Container maxW="md" color="white" border="1px" p="2%" borderRadius="20px">
       <h3>Chat App</h3>
 
       <div className="chatContainer">
