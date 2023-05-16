@@ -9,13 +9,6 @@ import "./chatStyle.css";
 const Chat = () => {
   const [message, setMessage] = useState([]);
 
-  let msgStyle;
-  if (auth.currentUser) {
-    const user = auth.currentUser.uid;
-    const otherUser = message.id;
-    msgStyle = user === otherUser ? "my-messages" : "messages";
-  }
-
   useEffect(() => {
     const newQuery = query(collection(db, "messages"), orderBy("fecha"));
     const unsuscribe = onSnapshot(newQuery, (querysnapshot) => {
@@ -28,16 +21,21 @@ const Chat = () => {
     return unsuscribe;
   }, []);
 
-  console.log(message);
-
   return (
     <div>
       <h3>Chat App</h3>
 
       {message.map((item) => (
-        <div key={item.id} className={msgStyle}>
+        <div
+          key={item.id}
+          className={
+            item.content.uid === auth.currentUser.uid
+              ? "my-messages"
+              : "messages"
+          }
+        >
           <p>{item.content.text}</p>
-          <img src={item.photoURL} alt="profile" width={55} />
+          <img src={item.content.image} alt="profile" width={55} />
         </div>
       ))}
 
