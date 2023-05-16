@@ -30,7 +30,6 @@ const Chat = () => {
       <div className="chatContainer">
         {message.map((item) => (
           <Box
-            bg="aliceblue"
             scrollBehavior="inside"
             key={item.id}
             className={
